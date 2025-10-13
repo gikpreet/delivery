@@ -1,4 +1,4 @@
-= CycleCloud를 사용한 Microsoft Azure Slurm/Lustre 클러스터 구성 가이드
+= Microsoft Azure에서 CycleCloud를 사용하는 Slurm/Enroot/Lustre HPC 클러스터 구성 가이드
 
 이 가이드는 Azure CycleCloud를 사용하여 고성능 컴퓨팅(HPC)의 핵심 요소인 Slurm 작업 스케줄러와 Lustre 병렬 파일 시스템을 손쉽게 통합하고 자동화하는 방법을 소개합니다.
 
@@ -6,12 +6,13 @@
 
 == Table of Contents
 
-1. link:./01_vnet_subnet_bastion.adoc[Virtual Network, Subnet, Bastion 구성]
-2. link:./02_cyclecloud_storage.adoc[Azure CycleCloud 배포]
-3. link:./03_slurm_cluster.adoc[Slurm 클러스터 생성 및 배포]
-4. link:./04_template.adoc[프로젝트를 사용한 사용자 정의 클러스터 템플릿 설정]
-5. link:./05_enroot.adoc[사용자 정의 CycleCloud project를 사용하여 enroot를 사용하여 NVIDIA GPU 워크로드를 실행[]
-6. link:./06_lustre.adoc[Azure Managed Lustre 구성]
-7. link:./07_infiniBand.adoc[InfiniBand 구성]
+1. link:./00_introduction.adoc[개요: Microsoft Azure에서 CycleCloud를 사용하는 Slurm/Enroot/Lustre 기반 HPC 구성]
+2. link:./01_vnet_subnet_bastion.adoc[네트워크 환경 구성 (Virtual Network, Subnet, Bastion)]
+3. link:./02_cyclecloud_storage.adoc[Azure CycleCloud 배포]
+4. link:./03_slurm_cluster.adoc[Slurm 클러스터 생성 및 배포]
+5. link:./04_template.adoc[CycleCloud 프로젝트를 사용한 사용자 정의 템플릿을 사용한 클러스터 배포]
+6. link:./05_enroot.adoc[사용자 정의 CycleCloud project를 사용하여 Enroot로 NVIDIA GPU 워크로드 실행]
+7. link:./06_lustre.adoc[Azure Managed Lustre 구성]
+8. link:./07_infiniBand.adoc[InfiniBand 구성]
 
 ---

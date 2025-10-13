@@ -6,14 +6,6 @@
 
 Enroot는 NVIDA에서 개발한 경량 컨테이너 런타임으로, HPC와 AI/딥러닝 워크로드 환경에서 효율적인 컨테이너 실행을 지원하기 위해 설계되었습니다. 전통적인 Docker와 같은 범용 컨테이너 런타임은 복잡한 데몬과 루트 권한을 요구하지만, Enroot는 단일 실행 파일로 동작하며, 루트 권한 없이도 컨테이너를 실행할 수 있는 것이 큰 특징입니다. 이러한 설계 덕분에 연구자가 HPC 클러스터나 공유 환경에서도 안전하게 컨테이너 기반 워크로드를 수행할 수 있습니다.
 
-////
-CycleCloud에서 Enroot를 설정하는 가장 좋은 방법은 클러스터 템플릿의 Cluster-init 기능을 사용하여 컴퓨팅 노드가 생성될 때 자동으로 설치 및 구성되도록 하는 것입니다. 이 방식은 모든 노드에 일관된 환경을 보장하며, 클러스터가 자동으로 확장될때도 완벽하게 작동합니다. 이때 Enroot와 Slurm 연동 플러그인인 Pyxis가 함꼐 설치되어야 합니다.
-
-CycleCloud의 Slurm 클러스터에서 `cloud-init` 은 
-
-https://techcommunity.microsoft.com/blog/azurehighperformancecomputingblog/running-container-workloads-in-cyclecloud-slurm-%E2%80%93-multi-node-multi-gpu-jobs-nccl/4399865
-////
-
 == 사전 작업
 
 Korea South 지역에서 컴퓨팅 노드로 ND96***_v* 가상 머신을 사용하기 위해서는 사전 작업이 필요합니다. 

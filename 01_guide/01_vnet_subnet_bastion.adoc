@@ -1,11 +1,6 @@
-= Virtual Network, Subnet, Bastion 구성
+= 네트워크 환경 구성 (Virtual Network, Subnet, Bastion)
 :sectnums:
 :toc:
-
-////
-https://learn.microsoft.com/ko-kr/azure/bastion/quickstart-host-portal
-https://learn.microsoft.com/ko-kr/training/modules/connect-vm-with-azure-bastion/4-exercise-connect-vm-with-bastion
-////
 
 이 문서 시리즈는 Microsoft Azure에서 NVidia GPU를 사용한 분산 머신 러닝을 위한 Slurm/CycleCloud 기반 환경을 구성하는 것을 목표로 제작되었습니다. 모든 문서의 연습을 마무리하면, 아래와 같은 구조의 Azure Cloud 기반 HPC 환경이 구성됩니다.
 
