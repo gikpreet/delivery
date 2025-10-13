@@ -1,0 +1,8 @@
+= Azure HPC Security 배포 가이드
+
+== Table of Contents
+
+1. link:./01_azure_bastion.adoc[Azure Bastion]
+2. link:./02_guide_azure_bastion.adoc[Azure Bastion 배포 가이드]
+
+---
