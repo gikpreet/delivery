@@ -21,7 +21,8 @@
 
 === 기술 개요 및 아키텍처
 
-1. 개요
+1. link:./02_tech_desc/01_azure/[Microsoft Azure]
+. link:./02_tech_desc/01_azure/01_subscription.adoc[Azure 구독(Subscription)]
 2. HPC 개요
 3. 클라우드 환경에서의 HPC
 4. Microsoft Azure의 HPC

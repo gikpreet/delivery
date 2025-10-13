@@ -90,3 +90,7 @@ image:./images/00/06/image01.png[]
 이 가이드에서는 컴퓨팅 노드간의 빠른 네트워크 통신을 위한 InfiniBand를 CycleCloud에서 구성하는 방법에 대해 안내합니다. 
 
 CycleCLoud에서는 기본적으로 생성될 컴퓨팅 노드가 InfiniBand를 구성할 수 있는 크기(SKU)를 가지고 있다면 InfiniBand가 자동으로 구성되므로, 사용해 수동으로 구성할 필요가 없으나, 이 문서에서는  Cloud-init을 사용하여 InfiniBand를 구성할 수 있는 방법을 설명합니다. 따라서, 이 문서의 내용은 참고용으로만 사용하되 수행하지 않아도 무방하며, 이 연습으로 특별히 생성되는 구성요소는 없습니다.
+
+---
+
+link:./00-1_prerequisite.adoc[다음: 사전 준비 사항]

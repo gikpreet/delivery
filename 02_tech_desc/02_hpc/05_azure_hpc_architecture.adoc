@@ -2,10 +2,6 @@
 :sectnums:
 :toc:
 
-////
-https://learn.microsoft.com/ko-kr/azure/cloud-adoption-framework/scenarios/azure-hpc/compute
-////
-
 빅 컴퓨팅이라고도 불리는 HPC는 수백 또는 수천 개의 코어가 필요할 수 있는 대규모 워크로드를 수행합니다. HPC는 제품 개발 프로세스의 모든 단계에서 에너지, 금융, 제조와 같은 산업을 도울 수 있습니다.
 
 빅 컴퓨팅 애플리케이션에는 일반적으로 다음과 같은 특성이 있습니다.
