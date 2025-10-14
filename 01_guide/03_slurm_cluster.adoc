@@ -2,7 +2,16 @@
 :sectnums:
 :toc:
 
-이 가이드에서는 이전의 문서에서 생성한 가상 네트워크상에 구성된 CycleCloud를 사용하여 새 클러스터를 만듭니다. CycleCloud는 해당 스케줄러에 대한 클러스터 프로비저닝을 간소화하는 미리 정의된 다양한 스케줄러 관련 템플릿을 제공합니다.
+Slurm은 고성능 컴퓨팅 클러스터에서 사용하는 오픈소스 작업 스케줄러(Job Scheduler)입니다. Slurm은 수 많은 계산 작업을 대기열에 등록하고, 가용한 컴퓨팅 자원(노드)에 순서대로 작업을 할당하여 전체 시스템의 효율을 극대화하는 역할을 합니다. 
+
+Azure CycleCloud는 Microsoft Azure 클라우드에서 고성능 컴퓨팅(HPC) 클러스터를 손쉽게 만들고 관리하며 최적화하는 오케스트레이션 도구로, Slurm을 사용하는 HPC 클러스터를 쉽게 배포하고 관리할 수 있도록 합니다. 
+
+Slurm과 CycleCloud 기술 개요에 대해서는 아래 문서들을 참조하십시오.
+
+* link:../02_tech_desc/02_hpc/02_slurm.adoc[Slurm 기술 개요]
+* link:../02_tech_desc/01_azure/06_azure_cyclecloud.adoc[Azure CycleCLoud]
+
+이 가이드에서는 이전의 문서에서 생성한 가상 네트워크상에 구성된 CycleCloud를 사용하여 새 Slurm 클러스터를 만듭니다. CycleCloud는 해당 스케줄러에 대한 클러스터 프로비저닝을 간소화하는 미리 정의된 다양한 스케줄러 관련 템플릿을 제공합니다.
 
 이 가이드에서는 첫 번째 단계로 Azure 구독이 클러스터의 리소스 요구사항을 수용하는지 확인하고, Azure CycleCloud를 사용하여 HPC 클러스터를 만들며, 구성하고 시작합니다. 연습에서는 다음과 같은 과정을 수행합니다.
 

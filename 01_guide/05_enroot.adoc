@@ -6,6 +6,10 @@
 
 Enroot는 NVIDA에서 개발한 경량 컨테이너 런타임으로, HPC와 AI/딥러닝 워크로드 환경에서 효율적인 컨테이너 실행을 지원하기 위해 설계되었습니다. 전통적인 Docker와 같은 범용 컨테이너 런타임은 복잡한 데몬과 루트 권한을 요구하지만, Enroot는 단일 실행 파일로 동작하며, 루트 권한 없이도 컨테이너를 실행할 수 있는 것이 큰 특징입니다. 이러한 설계 덕분에 연구자가 HPC 클러스터나 공유 환경에서도 안전하게 컨테이너 기반 워크로드를 수행할 수 있습니다.
 
+Enroot CycleCloud 기술 개요에 대해서는 아래 문서들을 참조하십시오.
+
+* link:../02_tech_desc/02_hpc/03_enroot.adoc[Enroot 기술 개요]
+
 == 사전 작업
 
 Korea South 지역에서 컴퓨팅 노드로 ND96***_v* 가상 머신을 사용하기 위해서는 사전 작업이 필요합니다. 
@@ -318,10 +322,156 @@ NCCL version 2.19.3+cuda12.2
 # Avg bus bandwidth    : 75.0205
 #
 ----
+
+== 다른 방법으로 Enroot 테스트
+
+여기에서는 스케줄러 노드에 접속하여 Enroot가 이미지를 가져와 컨테이너를 실행할 수 있는지 확인하고, Pyxis를 통해 Slurm 작업을 제출하여 계산 노드에서의 동작을 최종 점검합니다. 아래 절차에 따릅니다.
+
+1. CycleCloud UI 또는 Azure Portal을 통해 Slurm 클러스터의 Scheduler 노드의 IP를 확인하고 SSH를 통해 액세스합니다.
 +
-6. 클러스터를 종료합니다.
-7. 클러스터 페이지에서 **Terminate** 를 클릭하여 클러스터를 중지합니다.
+----
+ssh <user_name>@<scheduler-node-ip-address>
+----
++
+2. 아래 명령을 실행하여 Enroot와 Pyxis의 버전을 확인합니다.
++
+----
+enrioot version
+pyxis --version
+----
+
+=== 컨테이너 테스트
+
+1. 아래 명령을 실행하여 NVIDIA의 공식 CUDA 이미지를 로걸 저장소로 가져오는지 테스트합니다. 이 명령어는 이미지를 다운로드하고 Enroot가 사용할 수 있는 압축된 SquashFS 파일 시스템 형식(`ubuntu22.04-cuda12.sqsh`)으로 만듭니다.
++
+----
+enroot import --output ubuntu22.04-cuda12.sqsh docker://nvidia/cuda:12.1.1-base-ubuntu22.04
+----
++
+2. 아래 명령을 실행하여 생성된 컨테이너 파일 시스템을 사용하여 컨테이터를 시작하고, 내부에서 GPU에 접근할 수 있는지 확인합니다.
++
+----
+enroot start --gpu ubuntu22.04-cuda12.sqsh bash -c "nvidia-smi"
+----
+3. GPU 정보를 표시하는 테이블로 표시되는 결과를 확인합니다. 아래와 유사할 것입니다.
++
+----
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.05             Driver Version: 535.104.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  | 00000000:07:00.0 Off |                    0 |
+| N/A   30C    P0              51W / 400W |      0MiB / 40960MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  | 00000000:0F:00.0 Off |                    0 |
+| N/A   31C    P0              50W / 400W |      0MiB / 40960MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A    12345      C   /usr/bin/python                             3245MiB |
+|    1   N/A  N/A    56789      C   /path/to/my_training_program              15789MiB |
++---------------------------------------------------------------------------------------+
+----
+
+=== Slurm 작업을 통핸 테스트
+
+1. 스케줄러 노드에서 `test_enroot.sbatch` 라는 이름의 파일을 생성합니다. (nano와 같은 다른 에디터를 사용해도 무방합니다.)
++
+----
+vi test_enroot.sbatch
+----
++
+2. test_enroot 파일을 아래와 같이 작성합니다.
++
+[source, bash]
+----
+#!/bin/bash
+#SBATCH --job-name=EnrootTest
+#SBATCH --output=enroot_test_%j.out
+#SBATCH --error=enroot_test_%j.err
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gpus=1
+
+# Pyxis가 Enroot 컨테이너를 실행하도록 지시
+# ubuntu22.04-cuda12.sqsh 파일이 현재 디렉토리에 있다고 가정
+# 만약 /apps/enroot/images 같은 공용 경로에 있다면 절대 경로를 사용
+# 예: --container-image=/apps/enroot/images/ubuntu22.04-cuda12.sqsh
+#SBATCH --container-image=./ubuntu22.04-cuda12.sqsh
+
+echo "--- Starting Enroot Container Test Job ---"
+echo "Job is running on host: $(hostname)"
+
+# 컨테이너 내부에서 nvidia-smi 실행
+srun nvidia-smi
+
+echo "--- Enroot Container Test Job Finished ---"
+----
++
+|===
+|**중요** `--container-image` 경로에 방금 생성한 `.sqsh` 파일의 경로를 정확히 지정해야 합니다. Slurm 작업이 실행되는 계산 노드에서 접근 가능한 경로여야 합니다.
+|===
++
+3. 아래 명령을 실행하여 작업을 제출합니다.
++
+----
+sbatch test_enroot.sbatch
+----
++
+4. 아래 명령을 실행하여 작업 상태를 확인합니다.
++
+----
+squeue
+----
++
+5. 작업이 완료되면 출력 파일을 확인합니다. 작업은 일반적으로 1분 이내에 완료됩니다.
++
+----
+cat enroot_test_*.out
+----
+6. GPU 정보를 표시하는 테이블로 표시되는 결과를 확인합니다. 아래와 유사할 것입니다.
++
+----
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.104.05             Driver Version: 535.104.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  | 00000000:07:00.0 Off |                    0 |
+| N/A   30C    P0              51W / 400W |      0MiB / 40960MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+|   1  NVIDIA A100-SXM4-40GB          On  | 00000000:0F:00.0 Off |                    0 |
+| N/A   31C    P0              50W / 400W |      0MiB / 40960MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A    12345      C   /usr/bin/python                             3245MiB |
+|    1   N/A  N/A    56789      C   /path/to/my_training_program              15789MiB |
++---------------------------------------------------------------------------------------+
+----
+
+== 클러스터 종료
+
+1. 클러스터를 종료합니다.
+2. 클러스터 페이지에서 **Terminate** 를 클릭하여 클러스터를 중지합니다.
 +
 image:./images/05/03/image01.png[width=500]
 +
-8. 실습에 사용한 리소스를 삭제합니다.
+3. 실습에 사용한 리소스를 삭제합니다.

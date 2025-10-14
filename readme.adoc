@@ -21,8 +21,14 @@
 
 === 기술 개요 및 아키텍처
 
-1. link:./02_tech_desc/01_azure/[Microsoft Azure]
+1. link:./02_tech_desc/01_azure/[Microsoft Azure 기술 개요]
 . link:./02_tech_desc/01_azure/01_subscription.adoc[Azure 구독(Subscription)]
+. link:./02_tech_desc/01_azure/02_resource_groyup.adoc[리소스 그룹(Resource Group)]
+. link:./02_tech_desc/01_azure/03_vnet.adoc[가상 네트워크(Virtual Network)]
+. link:./02_tech_desc/01_azure/04_azure_bastion.adoc[Azure 배스천(Bastion)]
+. link:./02_tech_desc/01_azure/05_storage.adoc[저장소 계정(Storage Account)]
+. link:./02_tech_desc/01_azure/06_azure_cyclecloud.adoc[Azure CycleCloud]
+. link:./02_tech_desc/01_azure/07_managed_id.adoc[관리 ID(Managed ID)]
 2. HPC 개요
 3. 클라우드 환경에서의 HPC
 4. Microsoft Azure의 HPC

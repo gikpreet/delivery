@@ -1,4 +1,4 @@
-= Azure CycleCloud 특징과 개념
+= Azure CycleCloud 기술 개요
 
 Azure CycleCloud는 Microsoft Azure에서 제공하는 HPC(High Performance Computing) 및 빅데이터 클러스터 관리 솔루션입니다. 간단히 말해, 연구자나 엔지니어가 슈퍼컴퓨터급 연산을 클라우드에서 쉽게 활용할 수 있도록 도와주는 클러스터 오케스트레이션 및 관리 도구라고 할 수 있습니다.
 
