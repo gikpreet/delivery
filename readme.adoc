@@ -29,8 +29,18 @@
 . link:./02_tech_desc/01_azure/05_storage.adoc[저장소 계정(Storage Account)]
 . link:./02_tech_desc/01_azure/06_azure_cyclecloud.adoc[Azure CycleCloud]
 . link:./02_tech_desc/01_azure/07_managed_id.adoc[관리 ID(Managed ID)]
-2. HPC 개요
-3. 클라우드 환경에서의 HPC
-4. Microsoft Azure의 HPC
-5. HPC 관점에서 본 Azure 보안
-6. Microsoft Azure HPC 아키텍처
+2. link:./02_tech_desc/02_hpc/[HPC 개요]
+. link:./02_tech_desc/02_hpc/01_overview_hpc.adoc[HPC 개요]
+. link:./02_tech_desc/02_hpc/02_slurm.adoc[Slurm 기술 개요]
+. link:./02_tech_desc/02_hpc/03_enroot.adoc[Enroot 기술 개요]
+. link:./02_tech_desc/02_hpc/04_azure_managed_lustre.adoc[Azure Managed Lustre 기술 개요]
+. link:./02_tech_desc/02_hpc/05_hpc_on_cloud.adoc[클라우드 환경에서의 HPC]
+. link:./02_tech_desc/02_hpc/06_hpc_on_azure.adoc[Microsoft Azure의 HPC]
+. link:./02_tech_desc/02_hpc/07_azure_hpc_architecture.adoc[Microsoft Azure HPC 아키텍처]
+3. 보안
+. link:./02_tech_desc/03_security/01_network_security.adoc[Azure HPC 네트워크 보안]
+. link:./02_tech_desc/03_security/02_data_security.adoc[Azure HPC 데이터 보안]
+. link:./02_tech_desc/03_security/03_access_control_id_management.adoc[Azure HPC 접근 제어 및 아이덴티티 관리]
+. link:./02_tech_desc/03_security/04_operation_administration_security.adoc[Azure HPC 운영 및 관리 보안]
+. link:./02_tech_desc/03_security/05_compliance.adoc[규정 준수]
+. link:./02_tech_desc/03_security/06_azure_hpc_security.adoc[HPC 관점에서 본 Azure 보안]

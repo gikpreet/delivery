@@ -1,4 +1,4 @@
-= Azure Bastion
+= Azure 배스천(Bastion)
 :sectnums:
 :toc:
 

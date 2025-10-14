@@ -1,4 +1,4 @@
-= Azure 저장소 계정
+= Azure 저장소 계정(Azure Storage Account)
 
 Azure Storage Account는 Blob(파일), 파일 공유, 테이블(NoSQL), 큐(메시지) 등 다양한 종류의 데이터를 담는 클라우드상의 통합 스토리지 서비스입니다.
 
