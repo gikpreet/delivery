@@ -383,3 +383,7 @@ $cyclecloud delete_template OpenPBS_HPC
 3. CycleCloud 포털에서, 생성한 OpenPBS 템플릿이 제거된 것을 확인합니다.
 +
 image:./images/04/05/image01.png[width=700]
+
+---
+
+link:./03_slurm_cluster.adoc[이전: Slurm 클러스터 생성 및 배포] | link:./05_enroot.adoc[다음: Enroot 설정]

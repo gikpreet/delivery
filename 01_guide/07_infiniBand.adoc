@@ -124,3 +124,5 @@ sbatch osu_latency_test.sbatch
 결과에서 매우 낮은 지연시간(마이크로초 단위)이 확인된다면 InfiniBand가 성공적으로 구성된 것 입니다.
 
 ---
+
+link:./06_lustre.adoc[이전: InfiniBand 구성]

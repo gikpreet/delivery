@@ -479,3 +479,7 @@ cat enroot_test_*.out
 image:./images/05/03/image01.png[width=500]
 +
 3. 실습에 사용한 리소스를 삭제합니다.
+
+---
+
+link:./04_template.adoc[이전: CycleCloud 프로젝트를 사용한 사용자 정의 템플릿을 사용한 클러스터 배포] | link:./06_lustre.adoc[다음: Azure Managed Lustre 구성]

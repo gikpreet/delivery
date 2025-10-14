@@ -208,3 +208,7 @@ image:./images/01/05/image03.png[width=800]
 +
 6. 아래쪽에서 **적용** 버튼을 클릭합니다.
 7. 변경 내용이 적용되는 것을 확인합니다.
+
+---
+
+link:./00-1_prerequisite.adoc[이전: 사전 준비 사항] | link:./02_cyclecloud_storage.adoc[다음: Azure CycleCloud 배포]

@@ -577,3 +577,5 @@ image:./images/02/06/image08.png[width=700]
 image:./images/02/06/image09.png[width=700]
 
 ---
+
+link:./01_vnet_subnet_bastion.adoc[이전: 네트워크 환경 구성 (Virtual Network, Subnet, Bastion)] | link:./03_slurm_cluster.adoc[다음: Slurm 클러스터 생성 및 배포]
