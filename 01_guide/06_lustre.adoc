@@ -10,7 +10,7 @@ Lustre와 Azure에서 서비스 형태로 제공되는 Azure Managed Lustre File
 
 * link:../02_tech_desc/02_hpc/04_azure_managed_lustre.adoc[Azure Managed Lustre 기술 개요]
 
-Azure Managed Lustre(AMLFS)는 처리량이 높은 병렬 파일 시스템으로, 활성 데이터, 즉 클러스터에서 활성 또는 계획된 작업에 대한 학습에서 생성된 출력 및 중간 데이터만 저장하는 데 권장됩니다. 비용 최적화를 위해 이 파일 시스템을 범용 저장소로 사용해서는 안 됩니다. 오래되었거나 사용되지 않는 데이터는 Blob 저장소로 옮겨야 합니다. 다행히 AMLFS는 Blob 저장소와 동기화할 수 있습니다. 이 섹션에서는 설정 방법을 설명합니다.
+Azure Managed Lustre(AMLFS)는 처리량이 높은 병렬 파일 시스템으로, 활성 데이터, 즉 클러스터에서 활성 또는 계획된 작업에 대한 학습에서 생성된 출력 및 중간 데이터만 저장하는 데 권장됩니다. 비용 최적화를 위해 이 파일 시스템을 범용 저장소로 사용해서는 안 됩니다. 오래되었거나 사용되지 않는 데이터는 Blob 저장소로 옮겨야 합니다. 다행히 AMLFS는 Blob 저장소와 연결하여 파일을 이동/복사하여 저장할 수 있습니다. 이 섹션에서는 설정 방법을 설명합니다.
 
 이 가이드에서는 Azure Managed Lustre 파일 시스템과 Blob 통합을 설명하고, Azure Managed Lustre를 생성하며 Slurm 클러스터에서 사용하도록 구성합니다.
 

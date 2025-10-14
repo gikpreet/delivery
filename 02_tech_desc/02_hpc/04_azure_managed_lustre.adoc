@@ -33,7 +33,7 @@ OSS(Object Storage Server)와 OST(Object Storage Target)::
 * InfiniBand, Omni-Path, TCP/IP 등 다양한 네트워크 백엔드를 지원합니다.
 * LNET은 메시지 기반 통신을 사용하며, 고속 네트워크를 활용해 지연을 최소화합니다.
 
-image:./images/06/image01.png[width=700]
+image:./images/04/image01.png[width=700]
 
 === 데이터 접근 흐름
 

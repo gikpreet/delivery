@@ -10,6 +10,10 @@ Enroot CycleCloud 기술 개요에 대해서는 아래 문서들을 참조하십
 
 * link:../02_tech_desc/02_hpc/03_enroot.adoc[Enroot 기술 개요]
 
+Nvidia에서 지원하는 컨테이너 이미지의 목록과 특성에 대해서는 아래 Nvidia 문서를 참조하십시오.
+
+* https://docs.nvidia.com/deeplearning/frameworks/support-matrix/index.html#framework-matrix-2025__section_zz3_hdz_m1c[Nvidia Frameworks Support Matrix - Container images]
+
 == 사전 작업
 
 Korea South 지역에서 컴퓨팅 노드로 ND96***_v* 가상 머신을 사용하기 위해서는 사전 작업이 필요합니다. 

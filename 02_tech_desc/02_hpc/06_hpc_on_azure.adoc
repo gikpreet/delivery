@@ -229,7 +229,7 @@ ExpressRoute를 사용하면 연결 공급자의 도움을 받아 프라이빗 �
 
 HPCaaS란(HPCaaS : HPC as a Service), 클라우드의 자원을 활용하여 HPC 자원을 구성하고 네트워크 환경에서 데이터를 처리할 수 있도록 서비스하는 것을 의미합니다.
 
-image:./images/image01.png[]
+image:./images/06/image01.png[]
 
 서비스 형태로 제공받으며 쓴 만큼의 비용만 지불하면 되기 때문에, 이제는 누구나 고가의 HPC 자원을 보유하고 있지 않아도, 매일 같이 수없이 쌓이는 데이터를 고성능 컴퓨팅(HPC) 자원을 활용하여 빠르게 대규모 데이터 처리를 할 수 있게 되었습니다.
 
@@ -237,13 +237,13 @@ image:./images/image01.png[]
 
 Azure HPC 하이브리드 버스트 모드는 기존 온프레미스 또는 다른 환경의 HPC(고성능 컴퓨팅) 클러스터에 Azure의 컴퓨팅 리소스를 추가하여 필요에 따라 확장하거나 유휴 자원을 활용하는 기능입니다. Microsoft HPC Pack을 사용하여 Windows 또는 Linux Azure 가상 머신을 클러스터에 통합하고, 수요가 많을 때 유연하게 컴퓨팅 용량을 늘리거나(버스트) 가동률을 최적화할 수 있습니다. 
 
-image:./images/image02.png[]
+image:./images/06/image02.png[]
 
 ==== Cloud Native 모델
 
 Azure에서 HPC(고성능 컴퓨팅) 워크로드를 클라우드 네이티브 모드로 실행하는 것은 기존 애플리케이션을 클라우드에 맞게 현대화하고 Azure의 확장성 및 관리 효율성을 활용하는 것을 의미하며, 이를 위해 Azure Batch, Azure CycleCloud와 같은 클라우드 네이티브 도구와 서비스를 사용하고, 클라우드 네이티브 아키텍처를 지원하는 Azure의 인프라를 활용합니다. 
 
-image:./images/image03.png[]
+image:./images/06/image03.png[]
 
 === Azure HPC 관리 서비스
 

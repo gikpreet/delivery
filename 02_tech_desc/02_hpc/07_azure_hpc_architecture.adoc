@@ -12,7 +12,7 @@
 * 작업은 독립적이거나 긴밀하게 결합될 수 있으므로 InfiniBand 및 RDMA(원격 직접 메모리 액세스) 연결과 같은 고속 네트워킹 기술이 필요합니다.
 * 고성능 컴퓨팅, GPU(그래픽 처리 장치) 가속 컴퓨팅, 필드 프로그래밍 가능한 게이트 배열 가속 컴퓨팅 또는 컴퓨팅 최적화 SKU를 사용할 수 있습니다. 선택은 워크로드에 따라 달라집니다.
 
-image:./images/image04.png[]
+image:./images/07/image01.png[]
 
 Azure는 CPU 집약적 및 GPU 집약적 워크로드에 최적화된 다양한 VM(가상 머신) 인스턴스를 제공합니다. 이러한 VM은 Azure Virtual Machine Scale Sets에서 실행되어 복원력 및 부하 분산을 제공할 수 있습니다. 또한 Azure는 InfiniBand 지원 하드웨어를 제공하는 유일한 클라우드 플랫폼입니다. InfiniBand는 재무 위험 모델링, 엔지니어링 스트레스 분석, 저수지 시뮬레이션 및 지진 워크로드 실행과 같은 작업에 상당한 성능 이점을 제공합니다. 이 장점으로 인해 현재 온-프레미스 인프라 성능에 접근하거나 초과하는 성능이 발생합니다.
 
@@ -57,9 +57,9 @@ Azure Logic Apps::
 
 기업들은 복구 작업을 시작하기 전에 지하에서 발견한 저수지의 탄화수소 콘텐츠를 찾고 정확하게 정량화하고 자격을 갖추기 위해 대량의 지진 취득 데이터를 끊임없이 처리합니다. 취득 데이터는 구조화되어 있지 않으며 잠재 석유 및 가스 유전의 저장 용량이 쉽게 PB에 도달할 수 있습니다. 이러한 요인으로 인해 HPC 및 기타 적절한 데이터 관리 전략을 사용하여 적절한 기간 내에 내진 처리 작업을 완료할 수 있습니다.
 
-image:./images/image05.png[width=1000]
+image:./images/07/image02.png[width=1000]
 
-image:./images/image06.png[width=1000]
+image:./images/07/image03.png[width=1000]
 
 ==== 저수지 시뮬레이션 및 모델링을 위한 참조 아키텍처
 
@@ -67,15 +67,15 @@ image:./images/image06.png[width=1000]
 
 저수지 모델링 워크로드는 저수지 엔지니어링 영역이기도 합니다. 워크로드는 저수지 모델의 물리학, 수학 및 컴퓨터 프로그래밍을 결합하여 시간이 지남에 따라 저수지의 유체 동작을 분석하고 예측합니다. 이 분석에는 빠른 네트워킹을 포함하여 높은 계산 능력과 큰 컴퓨팅 워크로드 요구가 필요합니다.
 
-image:./images/image07.png[width=1000]
+image:./images/07/image04.png[width=1000]
 
-image:./images/image08.png[width=1000]
+image:./images/07/image05.png[width=1000]
 
 === 재무 참조 아키텍처
 
 다음 아키텍처는 HPC의 VM을 재무 워크로드에 사용하는 방법의 예입니다. 이 워크로드는 HPC 팩 HB 시리즈 컴퓨팅 노드를 사용합니다. HB 시리즈 SKU는 사용 중지되었지만 이 아키텍처에 사용되는 컴퓨팅 인스턴스에 적합한 대안은 HBv4 시리즈 VM입니다.
 
-image:./images/image09.png[width=1000]
+image:./images/07/image06.png[width=1000]
 
 HBv4 시리즈 VM은 재무 분석, 날씨 시뮬레이션 및 실리콘 레지스터 전송 수준 모델링과 같은 HPC 애플리케이션에 최적화되어 있습니다. HB VM은 다음과 같은 사양을 제공합니다.
 
@@ -96,7 +96,7 @@ HPC 헤드 노드의 경우 워크로드는 다른 크기의 VM을 사용합니�
 
 다음 아키텍처는 제조에서 HPC에서 VM을 사용하는 방법의 예입니다. 이 아키텍처는 Azure Private Link 서브넷에 연결된 Azure Files 공유 및 Azure Storage 계정을 사용합니다.
 
-image:./images/image10.png[width=1000]
+image:./images/07/image07.png[width=1000]
 
 아키텍처는 자체 서브넷에서 Azure CycleCloud를 사용합니다. HC 시리즈 VM은 클러스터 노드의 정렬에 사용됩니다.
 
