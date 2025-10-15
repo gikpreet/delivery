@@ -93,7 +93,7 @@ Bastion을 배포할 때 선택하는 SKU에 따라 아키텍처와 사용 가�
 
 === 배포 - 기본 SKU
 
-image:./images/image01.png[]
+image:./images/04/03/image01.png[]
 
 기본 SKU 이상으로 작업할 때 Bastion은 다음 아키텍처와 워크플로를 사용합니다.
 
@@ -105,7 +105,7 @@ image:./images/image01.png[]
 
 === 배포: Bastion 개발자
 
-image:./images/image02-1.png[]
+image:./images/04/03/image02.png[]
 
 Bastion Developer는 Azure Bastion 서비스를 무료로 제공하는 가벼운 솔루션입니다. 이 제품은 VM에 안전하게 연결하고 싶지만 추가 Bastion 기능이나 호스트 크기 조정은 필요하지 않은 개발/테스트 사용자에게 이상적입니다. Bastion Developer를 사용하면 가상 머신 연결 페이지를 통해 한 번에 하나의 Azure VM에 직접 연결할 수 있습니다.
 
@@ -113,7 +113,7 @@ Bastion Developer에 연결하는 경우 다른 SKU를 사용하여 배포하는
 
 === 배포: 프라이빗 전용
 
-image:./images/image32.png[]
+image:./images/04/03/image03.png[]
 
 프라이빗 전용 Bastion 배포는 개인 IP 주소 액세스만 허용하는 인터넷으로 라우팅할 수 없는 Bastion 배포를 만들어 워크로드를 엔드투엔드로 잠급니다. 프라이빗 전용 Bastion 배포에서는 공용 IP 주소를 통한 베스천 호스트 연결을 허용하지 않습니다. 이와 대조적으로 일반 Azure Bastion 배포에서는 사용자가 공용 IP 주소를 사용하여 베스천 호스트에 연결할 수 있습니다.
 
