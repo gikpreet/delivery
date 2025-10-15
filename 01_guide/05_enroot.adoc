@@ -340,7 +340,7 @@ ssh <user_name>@<scheduler-node-ip-address>
 2. 아래 명령을 실행하여 Enroot와 Pyxis의 버전을 확인합니다.
 +
 ----
-enrioot version
+enroot version
 pyxis --version
 ----
 
