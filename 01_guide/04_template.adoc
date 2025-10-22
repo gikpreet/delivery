@@ -1,4 +1,4 @@
-= CycleCloud 프로젝트를 사용한 사용자 정의 템플릿을 사용한 클러스터 배포
+= CycleCloud 프로젝트를 사용한 사용자 정의 템플릿으로 클러스터 배포
 :sectnums:
 :toc:
 
