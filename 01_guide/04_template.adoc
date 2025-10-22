@@ -84,7 +84,7 @@ https://github.com/Azure/cyclecloud-pbspro[Azure CycleCloud OpenPBS project]
 $ sudo dnf install -y git
 ----
 +
-2. 아래 명령dmf 실행하여 cyclecloud_projects 디렉토리를 생성합니다.
+2. 아래 명령을 실행하여 cyclecloud_projects 디렉토리를 생성합니다.
 +
 ----
 $ mkdir cyclecloud_projects
@@ -129,10 +129,6 @@ $ cp openpbs.txt openpbs_hpc.txt
 +
 ----
 $ ls
-----
-+
-----
-$ ls
 openpbs_hpc.txt  openpbs.txt
 ----
 +
@@ -172,13 +168,13 @@ AdditionalClusterInitSpecs = $ExecuteClusterInitSpecs
 +
 2. **[parameters Required Settings]**의 **[[parameters Auto-Scaling]]** 섹션에서 **[[[parameter UseLowPrio]]]** 섹션 아래에 다음을 추가합니다.
 +
----
+----
 [[[parameter UseLowPrio_HBv2]]]
 Label = Low Priority
 DefaultValue = false
 Widget.Plugin = pico.form.BooleanCheckBox
 Widget.Label = Use low priority instances for HBv2
----
+----
 3. **[parameters Advanced Settings]**의 **[[parameters Software]]** 섹션에서 **[[[parameter ImageName]]]** 섹션 아래에 다음을 추가합니다.
 +
 ----
