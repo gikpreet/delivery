@@ -125,4 +125,4 @@ sbatch osu_latency_test.sbatch
 
 ---
 
-link:./06_lustre.adoc[이전: InfiniBand 구성]
+link:./06_lustre.adoc[이전: Lustre 구성]
